@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --accent: #C9A96E;
+  --accent-light: #E8D5B0;
+  --dark: #0D0D0D;
+  --dark-2: #141414;
+  --dark-3: #1E1E1E;
+  --light: #F5F0E8;
+}
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--dark);
+    color: var(--light);
+    font-family: var(--font-outfit), 'Outfit', system-ui, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+/* Selection */
+::selection { background: var(--accent); color: var(--dark); }
+
+/* Swiper custom */
+.swiper-pagination-bullet {
+  background: var(--accent) !important;
+  opacity: 0.4;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--accent) !important;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1.2rem !important;
+}
