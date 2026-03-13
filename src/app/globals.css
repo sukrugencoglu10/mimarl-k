@@ -87,6 +87,16 @@
   animation: none;
   box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
 }
+@media (max-width: 768px) {
+  .whatsapp-btn {
+    width: 56px;
+    height: 56px;
+  }
+  .whatsapp-btn svg {
+    width: 28px;
+    height: 28px;
+  }
+}
 
 :root {
   --accent: #C9A96E;

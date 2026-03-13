@@ -178,36 +178,36 @@ export default function AboutSection() {
                 {/* Details — shown after bricks finish */}
                 <g key={`d-${buildKey}`} style={{ display: showDetails ? undefined : "none" }}>
                   {/* Ground */}
-                  <line x1="60" y1={B.y + B.h} x2="340" y2={B.y + B.h} stroke="#C9A96E" strokeWidth="1" className="detail-line" style={{ animationDelay: "0s" }} />
+                  <line x1="60" y1={B.y + B.h} x2="340" y2={B.y + B.h} stroke="#C9A96E" strokeWidth="2" className="detail-line" style={{ animationDelay: "0s" }} />
 
                   {/* Building outline */}
-                  <rect x={B.x} y={B.y} width={B.w} height={B.h} fill="none" stroke="#C9A96E" strokeWidth="1.5" className="detail-line" style={{ animationDelay: "0.1s" }} />
+                  <rect x={B.x} y={B.y} width={B.w} height={B.h} fill="none" stroke="#C9A96E" strokeWidth="2.5" className="detail-line" style={{ animationDelay: "0.1s" }} />
 
                   {/* Roof cornice */}
-                  <line x1={B.x - 3} y1={B.y} x2={B.x + B.w + 3} y2={B.y} stroke="#C9A96E" strokeWidth="2.5" className="detail-line" style={{ animationDelay: "0.2s" }} />
-                  <line x1={B.x - 2} y1={B.y + 3} x2={B.x + B.w + 2} y2={B.y + 3} stroke="#C9A96E" strokeWidth="0.5" className="detail-line" style={{ animationDelay: "0.3s" }} />
+                  <line x1={B.x - 3} y1={B.y} x2={B.x + B.w + 3} y2={B.y} stroke="#C9A96E" strokeWidth="3.5" className="detail-line" style={{ animationDelay: "0.2s" }} />
+                  <line x1={B.x - 2} y1={B.y + 4} x2={B.x + B.w + 2} y2={B.y + 4} stroke="#C9A96E" strokeWidth="1" className="detail-line" style={{ animationDelay: "0.3s" }} />
 
                   {/* Roof triangle */}
-                  <line x1={B.x} y1={B.y} x2={B.x + B.w / 2} y2={B.y - 25} stroke="#C9A96E" strokeWidth="1.2" className="detail-line" style={{ animationDelay: "0.4s" }} />
-                  <line x1={B.x + B.w} y1={B.y} x2={B.x + B.w / 2} y2={B.y - 25} stroke="#C9A96E" strokeWidth="1.2" className="detail-line" style={{ animationDelay: "0.5s" }} />
+                  <line x1={B.x} y1={B.y} x2={B.x + B.w / 2} y2={B.y - 25} stroke="#C9A96E" strokeWidth="2" className="detail-line" style={{ animationDelay: "0.4s" }} />
+                  <line x1={B.x + B.w} y1={B.y} x2={B.x + B.w / 2} y2={B.y - 25} stroke="#C9A96E" strokeWidth="2" className="detail-line" style={{ animationDelay: "0.5s" }} />
 
                   {/* Window frames */}
                   {WINDOWS.map((w, i) => (
-                    <rect key={`wf${i}`} x={w.x} y={w.y} width={w.w} height={w.h} fill="rgba(100,180,255,0.1)" stroke="#C9A96E" strokeWidth="0.6" className="detail-line" style={{ animationDelay: `${0.6 + i * 0.02}s` }} />
+                    <rect key={`wf${i}`} x={w.x} y={w.y} width={w.w} height={w.h} fill="rgba(100,180,255,0.1)" stroke="#C9A96E" strokeWidth="1.2" className="detail-line" style={{ animationDelay: `${0.6 + i * 0.02}s` }} />
                   ))}
 
                   {/* Floor lines */}
                   {WINDOWS.filter((_, i) => i % 4 === 0).map((w, i) => (
-                    <line key={`fl${i}`} x1={B.x} y1={w.y + w.h + 2} x2={B.x + B.w} y2={w.y + w.h + 2} stroke="#C9A96E" strokeWidth="0.3" className="detail-line" style={{ animationDelay: `${1.2 + i * 0.08}s` }} />
+                    <line key={`fl${i}`} x1={B.x} y1={w.y + w.h + 2} x2={B.x + B.w} y2={w.y + w.h + 2} stroke="#C9A96E" strokeWidth="0.6" className="detail-line" style={{ animationDelay: `${1.2 + i * 0.08}s` }} />
                   ))}
 
                   {/* Entrance */}
-                  <rect x={ENTRANCE.x} y={ENTRANCE.y} width={ENTRANCE.w} height={ENTRANCE.h} fill="rgba(201,169,110,0.12)" stroke="#C9A96E" strokeWidth="0.8" className="detail-line" style={{ animationDelay: "1.8s" }} />
+                  <rect x={ENTRANCE.x} y={ENTRANCE.y} width={ENTRANCE.w} height={ENTRANCE.h} fill="rgba(201,169,110,0.12)" stroke="#C9A96E" strokeWidth="1.5" className="detail-line" style={{ animationDelay: "1.8s" }} />
                   {/* Entrance arch */}
-                  <path d={`M${ENTRANCE.x},${ENTRANCE.y} Q${ENTRANCE.x + ENTRANCE.w / 2},${ENTRANCE.y - 8} ${ENTRANCE.x + ENTRANCE.w},${ENTRANCE.y}`} fill="none" stroke="#C9A96E" strokeWidth="0.8" className="detail-line" style={{ animationDelay: "1.9s" }} />
+                  <path d={`M${ENTRANCE.x},${ENTRANCE.y} Q${ENTRANCE.x + ENTRANCE.w / 2},${ENTRANCE.y - 8} ${ENTRANCE.x + ENTRANCE.w},${ENTRANCE.y}`} fill="none" stroke="#C9A96E" strokeWidth="1.5" className="detail-line" style={{ animationDelay: "1.9s" }} />
 
                   {/* Flag pole */}
-                  <line x1={B.x + B.w / 2} y1={B.y - 25} x2={B.x + B.w / 2} y2={B.y - 40} stroke="#C9A96E" strokeWidth="0.6" className="detail-line" style={{ animationDelay: "2s" }} />
+                  <line x1={B.x + B.w / 2} y1={B.y - 25} x2={B.x + B.w / 2} y2={B.y - 40} stroke="#C9A96E" strokeWidth="1" className="detail-line" style={{ animationDelay: "2s" }} />
                 </g>
 
                 {/* Excavator — demolish only */}
