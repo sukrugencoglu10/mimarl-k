@@ -104,8 +104,8 @@
     animation: wa-pulse 1.5s ease-in-out infinite;
   }
   .whatsapp-btn svg {
-    width: 36px !important;
-    height: 36px !important;
+    width: 42px !important;
+    height: 42px !important;
   }
 }
 
@@ -162,3 +162,4 @@
 .swiper-button-prev::after {
   font-size: 1.2rem !important;
 }
+
