@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+/* Brick build animation - tuğla tuğla inşa */
+@keyframes brick-in {
+  0%   { opacity: 0; transform: translateY(8px) scale(0.5); }
+  60%  { opacity: 0.9; transform: translateY(-1px) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes brick-fall {
+  0%   { opacity: 1; transform: translateY(0) rotate(0deg); }
+  100% { opacity: 0; transform: translateY(60px) rotate(12deg); }
+}
+@keyframes line-draw {
+  from { stroke-dashoffset: 500; opacity: 0; }
+  to   { stroke-dashoffset: 0; opacity: 1; }
+}
+.brick {
+  opacity: 0;
+  animation: brick-in 0.25s ease-out forwards;
+}
+.brick-fall {
+  animation: brick-fall 0.4s ease-in forwards !important;
+}
+.detail-line {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  opacity: 0;
+  animation: line-draw 1.5s ease-out both;
+}
+@keyframes detail-out {
+  0%   { opacity: 1; stroke-dashoffset: 0; }
+  100% { opacity: 0; stroke-dashoffset: 500; }
+}
+.detail-out {
+  animation: detail-out 0.5s ease-in forwards !important;
+}
+
+/* Excavator animation */
+@keyframes excavator-move {
+  0%   { transform: translateX(-90px); }
+  100% { transform: translateX(430px); }
+}
+@keyframes arm-swing {
+  0%, 100% { transform: rotate(0deg); }
+  30%  { transform: rotate(-15deg); }
+  60%  { transform: rotate(10deg); }
+}
+.excavator-group {
+  animation: excavator-move 3s ease-in-out forwards;
+}
+.excavator-arm {
+  transform-origin: 5px 248px;
+  animation: arm-swing 0.6s ease-in-out infinite;
+}
+@keyframes dust-puff {
+  0%   { opacity: 0.5; }
+  100% { opacity: 0; }
+}
+.dust {
+  animation: dust-puff 0.8s ease-out forwards;
+}
+
+@keyframes wa-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70%  { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: transform 0.2s;
+  animation: wa-pulse 2s infinite;
+}
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  animation: none;
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
+}
+
+:root {
+  --accent: #C9A96E;
+  --accent-light: #E8D5B0;
+  --dark: #0D0D0D;
+  --dark-2: #141414;
+  --dark-3: #1E1E1E;
+  --light: #F5F0E8;
+}
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--dark);
+    color: var(--light);
+    font-family: var(--font-outfit), 'Outfit', system-ui, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+/* Selection */
+::selection { background: var(--accent); color: var(--dark); }
+
+/* Swiper custom */
+.swiper-pagination-bullet {
+  background: var(--accent) !important;
+  opacity: 0.4;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--accent) !important;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1.2rem !important;
+}
