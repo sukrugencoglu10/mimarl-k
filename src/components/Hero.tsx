@@ -147,7 +147,7 @@ export default function Hero() {
           {[
             { n: "120+", label: "Proje" },
             { n: "15+", label: "Yıl Deneyim" },
-            { n: "40+", label: "Ödül" },
+            { n: "500+", label: "Memnun Aile" },
           ].map((s) => (
             <div key={s.label} className="text-center">
               <div className="text-xl font-bold" style={{ color: "var(--accent)" }}>{s.n}</div>
