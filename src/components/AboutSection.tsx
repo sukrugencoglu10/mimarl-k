@@ -248,14 +248,21 @@ export default function AboutSection() {
                 )}
               </svg>
             </div>
-            {/* Floating badge */}
-            <div
-              className="absolute -bottom-5 -right-5 px-6 py-4 rounded-xl border border-[#C9A96E]/30"
+            {/* Replay button */}
+            <button
+              onClick={replayAnimation}
+              className="absolute -bottom-5 -right-5 px-5 py-3.5 rounded-xl border border-[#C9A96E]/50 group transition-all duration-300 hover:border-[#C9A96E] hover:scale-105 active:scale-95"
               style={{ background: "rgba(13,13,13,0.95)", backdropFilter: "blur(10px)" }}
+              title="Animasyonu tekrar oynat"
             >
-              <div className="text-3xl font-bold" style={{ color: "var(--accent)" }}>2009</div>
-              <div className="text-white/40 text-xs uppercase tracking-widest">Yılından Beri</div>
-            </div>
+              <div className="flex items-center gap-2">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:rotate-180 transition-transform duration-500">
+                  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                  <path d="M3 3v5h5" />
+                </svg>
+                <span className="text-xs uppercase tracking-widest font-medium" style={{ color: "var(--accent)" }}>İnşaata Başla</span>
+              </div>
+            </button>
           </div>
         </div>
 
