@@ -93,8 +93,8 @@
     height: 56px;
   }
   .whatsapp-btn svg {
-    width: 28px;
-    height: 28px;
+    width: 36px !important;
+    height: 36px !important;
   }
 }
 
