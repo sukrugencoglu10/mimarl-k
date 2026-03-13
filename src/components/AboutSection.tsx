@@ -65,6 +65,7 @@ export default function AboutSection() {
   const [demolishing, setDemolishing] = useState(false);
   const [buildKey, setBuildKey] = useState(0);
   const [showDetails, setShowDetails] = useState(false);
+  const [detailsRenderKey, setDetailsRenderKey] = useState(0);
   const animatingRef = useRef(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
@@ -76,7 +77,10 @@ export default function AboutSection() {
   const scheduleDetails = useCallback(() => {
     if (timerRef.current) clearTimeout(timerRef.current);
     setShowDetails(false);
-    timerRef.current = setTimeout(() => setShowDetails(true), (maxDelay + 0.5) * 1000);
+    timerRef.current = setTimeout(() => {
+      setDetailsRenderKey((k) => k + 1); // force remount → CSS animations restart in Safari
+      setShowDetails(true);
+    }, (maxDelay + 0.5) * 1000);
   }, [maxDelay]);
 
   const replayAnimation = useCallback(() => {
@@ -186,7 +190,7 @@ export default function AboutSection() {
                 </g>
 
                 {/* Details — shown after bricks finish */}
-                <g key={`d-${buildKey}`} style={{ display: showDetails ? undefined : "none" }}>
+                <g key={`d-${buildKey}-${detailsRenderKey}`} style={{ display: showDetails ? undefined : "none" }}>
                   {/* Ground */}
                   <line x1="60" y1={B.y + B.h} x2="340" y2={B.y + B.h} stroke="#C9A96E" strokeWidth="2" className="detail-line" style={{ animationDelay: "0s" }} />
 
