@@ -29,7 +29,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#hero" className="text-xl font-bold tracking-widest uppercase" style={{ color: "var(--accent)" }}>
+        <a href="#hero" className="text-xl font-bold tracking-widest uppercase whitespace-nowrap md:static absolute left-1/2 md:left-auto md:transform-none -translate-x-1/2" style={{ color: "var(--accent)" }}>
           Yılmaz Mimarlık
         </a>
 
