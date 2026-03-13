@@ -66,7 +66,7 @@ export default function AboutSection() {
   const [buildKey, setBuildKey] = useState(0);
   const [showDetails, setShowDetails] = useState(false);
   const animatingRef = useRef(false);
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   const allBricks = useMemo(() => makeBricks(), []);
 
