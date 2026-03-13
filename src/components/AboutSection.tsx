@@ -108,8 +108,18 @@ export default function AboutSection() {
     }, 3500);
   }, [scheduleDetails]);
 
+  // Start animation when section becomes visible
+  useEffect(() => {
+    const section = document.getElementById("about");
+    if (!section) { scheduleDetails(); return; }
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { scheduleDetails(); observer.disconnect(); } },
+      { threshold: 0.1 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => { scheduleDetails(); }, []);
+  }, []);
 
   return (
     <section id="about" className="py-24 px-6" style={{ background: "var(--dark)" }}>
@@ -156,7 +166,7 @@ export default function AboutSection() {
               }}
               onClick={replayAnimation}
             >
-              <svg ref={svgRef} viewBox="0 0 400 300" className="w-full h-full opacity-70" preserveAspectRatio="xMidYMid meet">
+              <svg ref={svgRef} viewBox="0 0 400 300" className="w-full h-full opacity-90" preserveAspectRatio="xMidYMid meet">
                 {/* Bricks */}
                 <g key={buildKey}>
                   {allBricks.map((b, i) => (
