@@ -180,8 +180,11 @@ export default function AboutSection() {
                   {/* Ground */}
                   <line x1="60" y1={B.y + B.h} x2="340" y2={B.y + B.h} stroke="#C9A96E" strokeWidth="2" className="detail-line" style={{ animationDelay: "0s" }} />
 
-                  {/* Building outline */}
-                  <rect x={B.x} y={B.y} width={B.w} height={B.h} fill="none" stroke="#C9A96E" strokeWidth="2.5" className="detail-line" style={{ animationDelay: "0.1s" }} />
+                  {/* Building outline — 4 lines so each fits within dasharray:500 */}
+                  <line x1={B.x} y1={B.y} x2={B.x + B.w} y2={B.y} stroke="#C9A96E" strokeWidth="2.5" className="detail-line" style={{ animationDelay: "0.1s" }} />
+                  <line x1={B.x + B.w} y1={B.y} x2={B.x + B.w} y2={B.y + B.h} stroke="#C9A96E" strokeWidth="2.5" className="detail-line" style={{ animationDelay: "0.15s" }} />
+                  <line x1={B.x + B.w} y1={B.y + B.h} x2={B.x} y2={B.y + B.h} stroke="#C9A96E" strokeWidth="2.5" className="detail-line" style={{ animationDelay: "0.2s" }} />
+                  <line x1={B.x} y1={B.y + B.h} x2={B.x} y2={B.y} stroke="#C9A96E" strokeWidth="2.5" className="detail-line" style={{ animationDelay: "0.25s" }} />
 
                   {/* Roof cornice */}
                   <line x1={B.x - 3} y1={B.y} x2={B.x + B.w + 3} y2={B.y} stroke="#C9A96E" strokeWidth="3.5" className="detail-line" style={{ animationDelay: "0.2s" }} />
